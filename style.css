@@ -1,0 +1,268 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --first-color: #333;
+  --second-color: #464646;
+  --third-color: #fff;
+}
+.dark-mode {
+  --first-color: #eee;
+  --second-color: #ddd;
+  --third-color: #000;
+  transition: .6s;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Spartan", sans-serif;
+  background: var(--third-color);
+}
+section {
+  padding: 0 8%;
+}
+section p,
+section h2,
+#contact a,
+#footer p {
+  font-size: 3.2vmax;
+  line-height: 4.8vmax;
+  letter-spacing: .8px;
+  font-weight: 400;
+  color: var(--second-color);
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+.mode {
+  font-size: 6vmax;
+  color: black;
+  position: fixed;
+  top: 14vmax;
+  right: 6%;
+  z-index: 9999;
+  cursor: pointer;
+}
+/*===== HEADER =====*/
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0 5px 15px rgba(122,122,122,.42);
+  z-index: 2;
+}
+#nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #888;
+  color: #fff;
+  padding: .8rem 8%;
+  background: var(--third-color);
+}
+.logo {
+  flex: 5;
+}
+.logo a{
+  color: var(--first-color);
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+.nav-links {
+  flex: 4;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-link.contact {
+  margin-left: 3rem;
+}
+.nav-link {
+  color: var(--first-color);
+  font-weight: 600;
+  font-size: 1.2rem;
+  display: inline-block;
+}
+.burger {
+  display: none;
+  cursor: pointer;
+}
+
+/*===== WELCOME =====*/
+#welcome {
+  padding-top: 5vmax;
+  display: flex;
+  padding-top: 14vmax;
+}
+.title {
+  font-size: 3.8vmax;
+  font-weight: 600;
+  color: var(--first-color);
+}
+.title span {
+  font-size: 3.2vmax;
+}
+.welcome-text {
+  margin: 4vmax 0;
+}
+.email {
+  font-size: 2vmax;
+  font-weight: 600;
+}
+/*===== WORK =====*/
+#work {
+  padding-top: 4vmax;
+}
+.work {
+  column-count: 2;
+  gap: 8%;
+}
+.work-tail {
+  position: relative;
+  display: inline-block;
+  line-height: 0;
+  overflow: hidden;
+  margin-bottom: 16%;
+  box-shadow: 0 5px 15px rgba(122,122,122,.42);
+}
+.work-tail.down {
+  margin-top: 12vmax;
+}
+.work-tail img {
+  width: 100%;
+  height: 100%;
+}
+.fade {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0);
+  transition: .250s;
+}
+.info {
+  position: absolute;
+  top: 130%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  transition: .3s;
+  width: max-content;
+}
+.info h3 {
+  color: #eee;
+  margin-bottom: 1.4rem;
+  font-size: 1.8rem;
+}
+.info p {
+  color: #ddd;
+  font-weight: 500;
+  font-size: 1rem;
+}
+.work-tail:hover .info {
+  top: 50%;
+}
+.work-tail:hover .fade {
+  background: rgba(0,0,0,.5);
+}
+#about p:nth-child(1) {
+  margin-bottom: 4vmax;
+}
+/*===== CONTACT =====*/
+#contact {
+  padding-top: 6vmax;
+}
+#contact ul {
+  margin-top: 4vmax;
+}
+#contact a {
+  border-bottom: .1vmax solid #464646;
+  margin-bottom: 2vmax;
+  display: inline-block;
+}
+#contact a:nth-child(2) {
+  color: #565656;
+  border-bottom: .1vmax solid #565656;
+}
+#contact a:nth-child(3) {
+  color: #666;
+  border-bottom: .1vmax solid #666;
+}
+/*===== FOOTER =====*/
+#footer {
+  padding: 4vmax 8%;
+}
+#footer p {
+  color: #888;
+}
+/*===== RESPONSIVE =====*/
+@media (max-width: 768px) {
+  .burger {
+    display: block;
+    z-index: 99;
+    width: 24px;
+    height: 24px;
+  }
+  .logo {
+    text-align: center;
+  }
+  .line {
+    height: 2px;
+    border-radius: 2.5px;
+    margin: 3px;
+    background: var(--first-color);
+    transition: .3s;
+  }
+  .line:nth-child(1) {
+    transform: rotate(50deg) translate(9px, 10.5px);
+    width: 14px;
+  }
+  .line:nth-child(2) {
+    transform: rotate(-50deg) translate(-3px, 10px);
+    width: 14px;
+  }
+  .line:nth-child(3) {
+    transform: rotate(90deg) translateX(-3px) translateY(3px);
+    width: 24px;
+  }
+  .click.line:nth-child(1) {
+    transform: rotate(-50deg) translate(-4px, -1px);
+  }
+  .click.line:nth-child(2) {
+    transform: rotate(50deg) translate(1px, -7.5px);
+  }
+  .click.line:nth-child(3) {
+    transform: rotate(90deg) translateX(-3px) translateY(3px);
+  }
+  .nav-links {
+    position: fixed;
+    top: -150%;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: var(--third-color);
+    justify-content: space-evenly;
+    flex-direction: column;
+    transition: .3s;
+  }
+  .nav-links.active {
+    top: 0;
+  }
+  .nav-link.contact {
+    margin-left: 0;
+  }
+  .aside {
+    width: 100%;
+  }
+  .work {
+    column-count: 1;;
+  }
+  .work-tail.down {
+    margin-left: 0;
+  }
+}
